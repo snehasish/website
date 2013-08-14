@@ -4,7 +4,7 @@ This repository contains the source for my website. Use Pelican to generate stat
 
 ## Usage
 
-make html -- makes output for local testing
+make html -- makes output for local testing  
 make publish -- makes output ready to be pushed to github to host
 
 ## License
