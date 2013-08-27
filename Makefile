@@ -7,7 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
-PUBOUTPUTDIR=/home/ska124/snehasish.github.io
+PUBOUTPUTDIR=../snehasish.github.io
 
 FTP_HOST=localhost
 FTP_USER=anonymous

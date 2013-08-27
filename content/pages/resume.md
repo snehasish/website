@@ -4,7 +4,6 @@ Slug: resume
 Author: Snehasish
 
 
-### CV
+[Download PDF](https://dl.dropboxusercontent.com/u/12195251/cv.pdf)  
 
-Updated : August 07, 2013  
-[PDF](https://dl.dropboxusercontent.com/u/12195251/cv.pdf)
+Updated : August 07, 2013
