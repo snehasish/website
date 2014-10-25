@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Snehasish</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Removed FEED blocks, will add back ONE later -->
+        <link href="../../theme/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../../theme/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../../theme/css/base.css" />
+        <link rel="stylesheet" href="../../theme/css/syntax.css" />
+        <script src="../../theme/js/jquery-2.0.2.min.js"></script>
+        <script src="../../theme/js/bootstrap.min.js"></script>
+</head>
+
+<body id="index" class="home">
+
+        <div class="container">
+
+            <div class="row">            
+                <div class="span12">
+                    <h1 id="site-header"><a href="../..">Snehasish</a>
+                        <small style="font-size:40%">(pronounced snā-hä-SHēSH)</small></h1>
+                </div>
+            </div>
+            <hr style="margin:0px 0px 10px 0px;"/>
+            <div class="row">
+                <div class="span12">
+                    <ul class="nav nav-pills pull-right">
+                    
+                    <li  ><a href="../../index.html">Home</a></li>
+
+                            <li class="active"><a href="../../category/notes.html">Notes</a></li>
+
+                            <li><a href="../../pages/contact.html">Contact</a></li>
+                            <li><a href="../../pages/news.html">News</a></li>
+                            <li><a href="../../pages/resume.html">Resume</a></li>
+
+                    
+                    
+                    </ul>
+                </div>    
+            </div>    
+<div class="row">
+  <div class="span12">
+  <section id="content" class="body">
+    
+      <h3 class="entry-title">
+        <a href="../../notes/reverse-tunneling-using-hamachi/" rel="bookmark"
+           title="Permalink to Reverse tunneling using Hamachi">Reverse tunneling using Hamachi</a></h3>
+
+      <div class="row">
+        <div class="span8 pull-left">
+            <span class="label">hamachi</span>
+            <span class="label">ubuntu</span>
+            <span class="label">tunneling</span>
+            <span class="label">ssh</span>
+        </div>
+
+        <div class="span4 pull-right text-right">
+        <abbr class="published" title="2013-01-10T00:00:00">
+          Thu 10 January 2013
+        </abbr>
+        </div>
+      </div>
+
+    <div class="entry-content">
+      <p>Here is how to ssh into a remote host behind a firewall / http proxy using hamachi. 
+Root privileges are required in the described method.</p>
+<ol>
+<li>
+<p>Install the 32 bit or 64 bit version of hamachi using the <a href="https://secure.logmein.com/labs/">deb files available on their website</a> on both machines. Use the synaptic package manager or use</p>
+<div class="highlight"><pre>sudo dpkg -i logmein-hamachi_2.1.0.86-1_amd64.deb
+</pre></div>
+
+
+</li>
+<li>
+<p>The daemon should automatically start after installation. Log into the hamachi network, then set your desired nickname using and create a network from one of the computers using:</p>
+<div class="highlight"><pre><span class="nx">sudo</span> <span class="nx">hamachi</span> <span class="nx">login</span>
+<span class="nx">sudo</span> <span class="nx">hamachi</span> <span class="kt">set</span><span class="na">-nick</span> <span class="o">&lt;</span><span class="nx">nickname</span><span class="o">&gt;</span>
+<span class="nx">sudo</span> <span class="nx">hamachi</span> <span class="nx">create</span> <span class="o">&lt;</span><span class="nx">network</span><span class="na">-name</span><span class="o">&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>This may fail if the machine is behind a http proxy. Hamachi uses ports 12975 and 32976 to communicate with the central server, failing which it tries 443 (SSL). In case the machine is behind a HTTP Proxy, the settings need to be overridden:</p>
+<div class="highlight"><pre>sudo gedit /var/lib/logmein-hamachi/h2-engine-override.cfg
+</pre></div>
+
+
+<p>Add the following lines, where the format should be similar to the file h2-engine.cfg in the same folder:</p>
+<div class="highlight"><pre>Conn.PxyAdd     &lt;Proxy IP Address&gt;
+Conn.PxyPort    &lt;Proxy Port&gt;
+Conn.Mask       4
+</pre></div>
+
+
+<p>Restart the hamachi daemon:</p>
+<div class="highlight"><pre>sudo /etc/init.d/logmein-hamachi restart
+</pre></div>
+
+
+<p>For troubleshooting, take a look at the log file:</p>
+<div class="highlight"><pre>tail /var/lib/logmein-hamachi/h2-engine.log
+</pre></div>
+
+
+</li>
+<li>
+<p>Join the hamachi network from the other computer using </p>
+<div class="highlight"><pre>sudo hamachi join &lt;network-name&gt;
+</pre></div>
+
+
+</li>
+<li>
+<p>On the machine you wish to log into, install openssh-server</p>
+<div class="highlight"><pre>sudo apt-get install openssh-server
+</pre></div>
+
+
+</li>
+<li>
+<p>Check out the hamachi IP of the machine you want to log into (host)</p>
+<div class="highlight"><pre>sudo hamachi list # Third field 
+ifconfig # On the host machine, check the ip address of the ham0 network
+</pre></div>
+
+
+</li>
+<li>
+<p>You can now log into the host using </p>
+<div class="highlight"><pre>ssh username@&lt;hamachi-ip&gt;
+</pre></div>
+
+
+</li>
+</ol>
+<p>For a more detailed guide where you can setup RDP and File Sharing, <a href="http://www.thefanclub.co.za/how-to/how-remote-login-access-and-control-computers-using-logmein-hamachi-and-haguichi-ubuntu-1204">check out this link</a>.</p>
+    </div><!-- /.entry-content -->
+
+    
+
+  </section>
+  </div>
+</div>
+
+
+
+            <hr style="margin:30px 0px 0px 0px;"/>
+            <div class="row">
+                <div class="span12">
+                    <footer class="text-center"> Generated by <a href="http://blog.getpelican.com/">pelican</a>. Uses Google <a href="http://www.google.com/fonts/">webfonts</a> and Twitter <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
+                    <br />Copyright &copy; Snehasish Kumar, 2013
+                    </footer>
+                </div> 
+            </div>
+
+        </div>
+</body>
+</html>

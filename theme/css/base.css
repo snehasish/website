@@ -1,0 +1,15 @@
+html {
+	overflow-y: scroll; 
+}
+
+#site-header{
+	font-family: 'Shadows Into Light Two', cursive;
+}
+
+.entry-content{
+	margin-top:20px;
+}
+
+.comments{
+	margin-top: 30px;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Snehasish</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Removed FEED blocks, will add back ONE later -->
+        <link href="../../theme/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../../theme/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../../theme/css/base.css" />
+        <link rel="stylesheet" href="../../theme/css/syntax.css" />
+        <script src="../../theme/js/jquery-2.0.2.min.js"></script>
+        <script src="../../theme/js/bootstrap.min.js"></script>
+</head>
+
+<body id="index" class="home">
+
+        <div class="container">
+
+            <div class="row">            
+                <div class="span12">
+                    <h1 id="site-header"><a href="../..">Snehasish</a>
+                        <small style="font-size:40%">(pronounced snā-hä-SHēSH)</small></h1>
+                </div>
+            </div>
+            <hr style="margin:0px 0px 10px 0px;"/>
+            <div class="row">
+                <div class="span12">
+                    <ul class="nav nav-pills pull-right">
+                    
+                    <li  ><a href="../../index.html">Home</a></li>
+
+                            <li class="active"><a href="../../category/notes.html">Notes</a></li>
+
+                            <li><a href="../../pages/contact.html">Contact</a></li>
+                            <li><a href="../../pages/news.html">News</a></li>
+                            <li><a href="../../pages/resume.html">Resume</a></li>
+
+                    
+                    
+                    </ul>
+                </div>    
+            </div>    
+<div class="row">
+  <div class="span12">
+  <section id="content" class="body">
+    
+      <h3 class="entry-title">
+        <a href="../../notes/building-and-testing-gcc-4.7.2/" rel="bookmark"
+           title="Permalink to Building and Testing GCC 4.7.2">Building and Testing GCC 4.7.2</a></h3>
+
+      <div class="row">
+        <div class="span8 pull-left">
+            <span class="label">gcc</span>
+            <span class="label">build</span>
+            <span class="label">test</span>
+        </div>
+
+        <div class="span4 pull-right text-right">
+        <abbr class="published" title="2013-01-11T00:00:00">
+          Fri 11 January 2013
+        </abbr>
+        </div>
+      </div>
+
+    <div class="entry-content">
+      <p>Steps to build GCC 4.7.2 from source on Ubuntu 12.04 (64 bit). GCC ( GNU Compiler Collection) contains compilers for many languages, here we will only be compiling it for C and C++.</p>
+<ol>
+<li>
+<p>Grab a tarball of the release from one of the <a href="http://gcc.gnu.org/mirrors.html">mirrors</a>.</p>
+<div class="highlight"><pre>cd ~/Downloads
+wget http://gcc.parentingamerica.com/releases/gcc-4.7.2/gcc-4.7.2.tar.bz2
+</pre></div>
+
+
+</li>
+<li>
+<p>Extract the tarball</p>
+<div class="highlight"><pre>tar jxvf gcc-4.7.2.tar.bz2
+</pre></div>
+
+
+</li>
+<li>
+<p>Install the prerequisite packages</p>
+<div class="highlight"><pre>sudo apt-get install libgmp-dev  \
+                     libmpfr-dev \
+                     libmpc-dev  \
+                     m4 \
+                     libc6-dev-i386
+</pre></div>
+
+
+<p>Add a link to the standard location for x86_64-linux-gnu</p>
+<div class="highlight"><pre>sudo ln -s /usr/lib/x86_64-linux-gnu /usr/lib64
+</pre></div>
+
+
+</li>
+<li>
+<p>Create a directory to build in your home directory</p>
+<div class="highlight"><pre>mkdir ~/gcc-4.7.2-build
+cd ~/gcc-4.7.2-build
+</pre></div>
+
+
+</li>
+<li>
+<p>Run configure with the given options. This will set the installation dir for gcc-4.7.2 to ~/gcc-4.7.2</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">HOME</span><span class="x">/Downloads/gcc-4.7.2/configure --build=x86_64-linux-gnu --prefix=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/gcc-4.7.2 --enable-languages=c,c++ --disable-multilib --program-suffix=-4.7</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Make! ( in parallel, with number of threads set to the number of processors on your system)</p>
+<div class="highlight"><pre>grep processor /proc/cpuinfo | wc -l | xargs make -j
+</pre></div>
+
+
+</li>
+<li>
+<p>Next install dejagnu</p>
+<div class="highlight"><pre>sudo apt-get install dejagnu autogen
+</pre></div>
+
+
+</li>
+<li>
+<p>Run the testsuite from the current directory, the k flag ensures that errors do not halt the process. Errors will occur as we only build a subset of the languages available</p>
+<div class="highlight"><pre>make -k check # Check all the things!
+make -k check-c++ # Check only g++
+</pre></div>
+
+
+</li>
+<li>
+<p>Install the binaries into the folder specified using</p>
+<div class="highlight"><pre>make install
+</pre></div>
+
+
+</li>
+<li>
+<p>Add the binaries to your path by adding the following lines into your .bashrc</p>
+<div class="highlight"><pre><span class="x">gedit </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.bashrc</span>
+<span class="x">export PATH=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/gcc-4.7.2/bin:</span><span class="p">$</span><span class="nv">PATH</span><span class="x"></span>
+<span class="x">export LD_LIBRARY_PATH=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/gcc-4.7.2/lib:</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/gcc-4.7.2/lib64:</span><span class="p">$</span><span class="nv">LD_LIBRARY_PATH</span><span class="x"></span>
+</pre></div>
+
+
+<p>Source the file</p>
+<div class="highlight"><pre><span class="x">. </span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.bashrc</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>You can now check to see if our binaries are in the path</p>
+<div class="highlight"><pre>g++-4.7 --version
+</pre></div>
+
+
+<p>Expected output</p>
+<div class="highlight"><pre>g++-4.7 (GCC) 4.7.2
+Copyright (C) 2012 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</pre></div>
+
+
+</li>
+</ol>
+<p>We can now go ahead and use all the new features present in g++ for the new c++0x standard.</p>
+    </div><!-- /.entry-content -->
+
+    
+
+  </section>
+  </div>
+</div>
+
+
+
+            <hr style="margin:30px 0px 0px 0px;"/>
+            <div class="row">
+                <div class="span12">
+                    <footer class="text-center"> Generated by <a href="http://blog.getpelican.com/">pelican</a>. Uses Google <a href="http://www.google.com/fonts/">webfonts</a> and Twitter <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
+                    <br />Copyright &copy; Snehasish Kumar, 2013
+                    </footer>
+                </div> 
+            </div>
+
+        </div>
+</body>
+</html>
