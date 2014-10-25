@@ -28,7 +28,8 @@ RELATIVE_URLS = True
 
 # My settings
 MARKUP=(('rst', 'md'))
-FILES_TO_COPY=(('robots.txt','robots.txt'),)
+STATIC_PATHS=['robots.txt', 'docs', 'CNAME']
+EXTRA_PATH_METADATA = {'CNAME': {'path': 'CNAME'},}
 THEME="theme-basic"
 ARTICLE_URL = '{category}/{slug}/'
 ARTICLE_SAVE_AS = '{category}/{slug}/index.html'

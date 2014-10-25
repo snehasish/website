@@ -1,9 +1,9 @@
 Title: Resume
-Date: 2013-06-07
+Date: 2014-10-24
 Slug: resume
 Author: Snehasish
 
 
-[Download PDF](https://dl.dropboxusercontent.com/u/12195251/cv.pdf)  
+[Download PDF](docs/cv.pdf)  
 
-Updated : August 07, 2013
+Updated : Oct 24, 2014
