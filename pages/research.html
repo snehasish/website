@@ -43,7 +43,33 @@
                     </ul>
                 </div>    
             </div>    
-    <h3>Amoeba-Cache: Adaptive Blocks for Eliminating Waste in the Memory Hierarchy</h3>
+    <h3>Protozoa : Adaptive Granularity Cache Coherence</h3>
+<h4>Hongzhou Zhao, Arrvindh Shriraman, Snehasish Kumar, Sandhya Dwarkadas</h4>
+<h4>Proceedings of the 2013 40th Annual IEEE/ACM International Symposium on Computer Architecture</h4>
+<p>State-of-the-art multiprocessor cache hierarchies propagate the use
+of a fixed granularity in the cache organization to the design of the
+coherence protocol. Unfortunately, the fixed granularity, generally
+chosen to match average spatial locality across a range of applications,
+not only results in wasted bandwidth to serve an individual
+thread’s access needs, but also results in unnecessary coherence traf-
+fic for shared data. The additional bandwidth has a direct impact on
+both the scalability of parallel applications and overall energy consumption.
+In this paper, we present the design of Protozoa, a family of coherence
+protocols that eliminate unnecessary coherence traffic and
+match data movement to an application’s spatial locality. Protozoa
+continues to maintain metadata at a conventional fixed cache
+line granularity while 1) supporting variable read and write caching
+granularity so that data transfer matches application spatial granularity,
+2) invalidating at the granularity of the write miss request so
+that readers to disjoint data can co-exist with writers, and 3) potentially
+supporting multiple non-overlapping writers within the cache
+line, thereby avoiding the traditional ping-pong effect of both readwrite
+and write-write false sharing. Our evaluation demonstrates that
+Protozoa consistently reduce miss rate and improve the fraction of
+transmitted data that is actually utilized.</p>
+<p><a href="http://dl.acm.org/citation.cfm?id=2485969">PDF from ACM DL</a></p>
+<hr />
+<h3>Amoeba-Cache: Adaptive Blocks for Eliminating Waste in the Memory Hierarchy</h3>
 <h4>Snehasish Kumar, Hongzhou Zhao, Arrvindh Shriraman, Eric Matthews, Sandhya Dwarkadas, Lesley Shannon</h4>
 <h4>Proceedings of the 2012 45th Annual IEEE/ACM International Symposium on Microarchitecture</h4>
 <p>The fixed geometries of current cache designs do not adapt to the
