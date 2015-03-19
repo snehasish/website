@@ -6,4 +6,4 @@ Author: Snehasish
 
 [Download PDF]({filename}/docs/cv.pdf) 
 
-Updated : Oct 24, 2014
+Updated : Mar 19, 2015
