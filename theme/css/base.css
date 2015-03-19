@@ -13,3 +13,7 @@ html {
 .comments{
 	margin-top: 30px;
 }
+
+p {
+    text-align: justify;
+}
