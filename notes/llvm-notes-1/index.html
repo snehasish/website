@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Snehasish - Authors</title>
+        <title>Snehasish</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Removed FEED blocks, will add back ONE later -->
@@ -31,7 +31,7 @@
                     
                     <li  ><a href="http://www.snehasish.net/index.html">Home</a></li>
 
-                            <li><a href="http://www.snehasish.net/category/notes.html">Notes</a></li>
+                            <li class="active"><a href="http://www.snehasish.net/category/notes.html">Notes</a></li>
 
                             <li><a href="http://www.snehasish.net/pages/contact.html">Contact</a></li>
                             <li><a href="http://www.snehasish.net/pages/news.html">News</a></li>
@@ -43,10 +43,66 @@
                     </ul>
                 </div>    
             </div>    
-    <h1>Authors on Snehasish</h1>
+<div class="row">
+  <div class="span12">
+  <section id="content" class="body">
+    
+      <h3 class="entry-title">
+        <a href="http://www.snehasish.net/notes/llvm-notes-1/" rel="bookmark"
+           title="Permalink to LLVM Notes #1">LLVM Notes #1</a></h3>
 
-    <ul>        <li><a href="http://www.snehasish.net/author/snehasish.html">Snehasish</a> (10)</li>
-    </ul>
+      <div class="row">
+        <div class="span8 pull-left">
+            <span class="label"></span>
+        </div>
+
+        <div class="span4 pull-right text-right">
+        <abbr class="published" title="2015-08-21T00:00:00-04:00">
+          Fri 21 August 2015
+        </abbr>
+        </div>
+      </div>
+
+    <div class="entry-content">
+      <h3>Introduction</h3>
+<p>These notes are based on the configuration of a LLVM based project which uses the 
+<code>autoconf</code> build system. LLVM is configured with <code>--enable-optimized --enable-assertions --enable-targets=x86,cpp</code>
+and built in a separate build directory.</p>
+<h3>Boost and LLVM</h3>
+<p>Combining Boost with LLVM is usually not a good idea. Boost relies heavily on RTTI (Run time type information) and 
+Exception Handling. Both of these are disabled by default in the LLVM build. To enable </p>
+<h3>Debugging Projects</h3>
+<p>If you have your project in <code>--disable-optimized</code> mode then it will look for the 
+<code>Debug+Asserts</code> directory in the LLVM build folder (specified during configure). 
+However it is possible to link against the <code>Release+Assert</code> libs while your 
+project is configured for <code>Debug+Asserts</code> by adding a symlink in the LLVM build 
+folder (and it works, though you only get symbols for your project): </p>
+<div class="highlight"><pre><span class="nv">$ </span>ln -s Release+Asserts Debug+Asserts
+</pre></div>
+    </div><!-- /.entry-content -->
+
+    
+
+  </section>
+  </div>
+</div>
+
+<hr style="margin:30px 0px 0px 0px;"/>
+<div class="comments row">
+  <div class="span2"></div>
+  <div id="disqus_thread" class="span8"></div>
+  <div class="span2"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "notes/llvm-notes-1/";
+    var disqus_url = "http://www.snehasish.net/notes/llvm-notes-1/";
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://snehasish.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+</div>
+
 
             <hr style="margin:30px 0px 0px 0px;"/>
             <div class="row">

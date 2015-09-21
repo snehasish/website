@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Snehasish</title><link>http://www.snehasish.net/</link><description></description><atom:link href="http://www.snehasish.net/feeds/snehasish.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Jan 2013 00:00:00 -0500</lastBuildDate><item><title>SublimeText and the Linux kernel</title><link>http://www.snehasish.net/notes/sublime-text-and-linux-kernel/</link><description>&lt;p&gt;In the kernel source root directory, we will create a list of files we want cscope to index. We are going to be looking at only the i386 architecture files and leave out the rest. Assuming cscope is installed and present in the path.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Snehasish</title><link>http://www.snehasish.net/</link><description></description><atom:link href="http://www.snehasish.net/feeds/snehasish.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 21 Aug 2015 00:00:00 -0400</lastBuildDate><item><title>LLVM Notes #1</title><link>http://www.snehasish.net/notes/llvm-notes-1/</link><description>&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;These notes are based on the configuration of a LLVM based project which uses the 
+&lt;code&gt;autoconf&lt;/code&gt; build system. LLVM is configured with &lt;code&gt;--enable-optimized --enable-assertions --enable-targets=x86,cpp&lt;/code&gt;
+and built in a separate build directory.&lt;/p&gt;
+&lt;h3&gt;Boost and LLVM&lt;/h3&gt;
+&lt;p&gt;Combining Boost with LLVM is usually not a good idea. Boost relies heavily on RTTI (Run time type information) and 
+Exception Handling. Both of these are disabled by default in the LLVM build. To enable &lt;/p&gt;
+&lt;h3&gt;Debugging Projects&lt;/h3&gt;
+&lt;p&gt;If you have your project in &lt;code&gt;--disable-optimized&lt;/code&gt; mode then it will look for the 
+&lt;code&gt;Debug+Asserts&lt;/code&gt; directory in the LLVM build folder (specified during configure). 
+However it is possible to link against the &lt;code&gt;Release+Assert&lt;/code&gt; libs while your 
+project is configured for &lt;code&gt;Debug+Asserts&lt;/code&gt; by adding a symlink in the LLVM build 
+folder (and it works, though you only get symbols for your project): &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;ln -s Release+Asserts Debug+Asserts
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Snehasish</dc:creator><pubDate>Fri, 21 Aug 2015 00:00:00 -0400</pubDate><guid>tag:www.snehasish.net,2015-08-21:notes/llvm-notes-1/</guid><category></category></item><item><title>SublimeText and the Linux kernel</title><link>http://www.snehasish.net/notes/sublime-text-and-linux-kernel/</link><description>&lt;p&gt;In the kernel source root directory, we will create a list of files we want cscope to index. We are going to be looking at only the i386 architecture files and leave out the rest. Assuming cscope is installed and present in the path.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Ensure that the source tree is clean, and then generate a list of files to be indexed&lt;/p&gt;
