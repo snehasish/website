@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Snehasish</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Removed FEED blocks, will add back ONE later -->
+        <link href="http://www.snehasish.net/theme/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="http://www.snehasish.net/theme/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://www.snehasish.net/theme/css/base.css" />
+        <link rel="stylesheet" href="http://www.snehasish.net/theme/css/syntax.css" />
+        <script src="http://www.snehasish.net/theme/js/jquery-2.0.2.min.js"></script>
+        <script src="http://www.snehasish.net/theme/js/bootstrap.min.js"></script>
+</head>
+
+<body id="index" class="home">
+
+        <div class="container">
+
+            <div class="row">            
+                <div class="span12">
+                    <h1 id="site-header"><a href="http://www.snehasish.net">Snehasish</a>
+                        <small style="font-size:40%">(pronounced snā-hä-SHēSH)</small></h1>
+                </div>
+            </div>
+            <hr style="margin:0px 0px 10px 0px;"/>
+            <div class="row">
+                <div class="span12">
+                    <ul class="nav nav-pills pull-right">
+                    
+                    <li  ><a href="http://www.snehasish.net/index.html">Home</a></li>
+
+                            <li class="active"><a href="http://www.snehasish.net/category/notes.html">Notes</a></li>
+
+                            <li><a href="http://www.snehasish.net/pages/contact.html">Contact</a></li>
+                            <li><a href="http://www.snehasish.net/pages/news.html">News</a></li>
+                            <li><a href="http://www.snehasish.net/pages/resume.html">Resume</a></li>
+
+                    
+                    
+                    </ul>
+                </div>    
+            </div>    
+<div class="row">
+  <div class="span12">
+  <section id="content" class="body">
+    
+      <h3 class="entry-title">
+        <a href="http://www.snehasish.net/notes/reverse-tunneling-using-hamachi/" rel="bookmark"
+           title="Permalink to Reverse tunneling using Hamachi">Reverse tunneling using Hamachi</a></h3>
+
+      <div class="row">
+        <div class="span8 pull-left">
+            <span class="label">hamachi</span>
+            <span class="label">ubuntu</span>
+            <span class="label">tunneling</span>
+            <span class="label">ssh</span>
+        </div>
+
+        <div class="span4 pull-right text-right">
+        <abbr class="published" title="2013-01-10T00:00:00-05:00">
+          Thu 10 January 2013
+        </abbr>
+        </div>
+      </div>
+
+    <div class="entry-content">
+      <p>Here is how to ssh into a remote host behind a firewall / http proxy using hamachi. 
+Root privileges are required in the described method.</p>
+<ol>
+<li>
+<p>Install the 32 bit or 64 bit version of hamachi using the <a href="https://secure.logmein.com/labs/">deb files available on their website</a> on both machines. Use the synaptic package manager or use</p>
+<div class="highlight"><pre><span></span>sudo dpkg -i logmein-hamachi_2.1.0.86-1_amd64.deb
+</pre></div>
+
+
+</li>
+<li>
+<p>The daemon should automatically start after installation. Log into the hamachi network, then set your desired nickname using and create a network from one of the computers using:</p>
+<div class="highlight"><pre><span></span>sudo hamachi login
+sudo hamachi set-nick &lt;nickname&gt;
+sudo hamachi create &lt;network-name&gt;
+</pre></div>
+
+
+</li>
+<li>
+<p>This may fail if the machine is behind a http proxy. Hamachi uses ports 12975 and 32976 to communicate with the central server, failing which it tries 443 (SSL). In case the machine is behind a HTTP Proxy, the settings need to be overridden:</p>
+<div class="highlight"><pre><span></span>sudo gedit /var/lib/logmein-hamachi/h2-engine-override.cfg
+</pre></div>
+
+
+<p>Add the following lines, where the format should be similar to the file h2-engine.cfg in the same folder:</p>
+<div class="highlight"><pre><span></span>Conn.PxyAdd     &lt;Proxy IP Address&gt;
+Conn.PxyPort    &lt;Proxy Port&gt;
+Conn.Mask       4
+</pre></div>
+
+
+<p>Restart the hamachi daemon:</p>
+<div class="highlight"><pre><span></span>sudo /etc/init.d/logmein-hamachi restart
+</pre></div>
+
+
+<p>For troubleshooting, take a look at the log file:</p>
+<div class="highlight"><pre><span></span>tail /var/lib/logmein-hamachi/h2-engine.log
+</pre></div>
+
+
+</li>
+<li>
+<p>Join the hamachi network from the other computer using </p>
+<div class="highlight"><pre><span></span>sudo hamachi join &lt;network-name&gt;
+</pre></div>
+
+
+</li>
+<li>
+<p>On the machine you wish to log into, install openssh-server</p>
+<div class="highlight"><pre><span></span>sudo apt-get install openssh-server
+</pre></div>
+
+
+</li>
+<li>
+<p>Check out the hamachi IP of the machine you want to log into (host)</p>
+<div class="highlight"><pre><span></span>sudo hamachi list # Third field 
+ifconfig # On the host machine, check the ip address of the ham0 network
+</pre></div>
+
+
+</li>
+<li>
+<p>You can now log into the host using </p>
+<div class="highlight"><pre><span></span>ssh username@&lt;hamachi-ip&gt;
+</pre></div>
+
+
+</li>
+</ol>
+<p>For a more detailed guide where you can setup RDP and File Sharing, <a href="http://www.thefanclub.co.za/how-to/how-remote-login-access-and-control-computers-using-logmein-hamachi-and-haguichi-ubuntu-1204">check out this link</a>.</p>
+    </div><!-- /.entry-content -->
+
+    
+
+  </section>
+  </div>
+</div>
+
+<hr style="margin:30px 0px 0px 0px;"/>
+<div class="comments row">
+  <div class="span2"></div>
+  <div id="disqus_thread" class="span8"></div>
+  <div class="span2"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "notes/reverse-tunneling-using-hamachi/";
+    var disqus_url = "http://www.snehasish.net/notes/reverse-tunneling-using-hamachi/";
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://snehasish.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+</div>
+
+
+            <hr style="margin:30px 0px 0px 0px;"/>
+            <div class="row">
+                <div class="span12">
+                    <footer class="text-center"> Generated by <a href="http://blog.getpelican.com/">pelican</a>. Uses Google <a href="http://www.google.com/fonts/">webfonts</a> and Twitter <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
+                    <br />Copyright &copy; Snehasish Kumar, 2015
+                    </footer>
+                </div> 
+            </div>
+
+        </div>
+<script type="text/javascript">
+    var disqus_shortname = 'snehasish';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42112602-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>
