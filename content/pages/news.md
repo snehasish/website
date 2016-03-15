@@ -3,6 +3,10 @@ Date: 2013-06-07
 Slug: news
 Author: Snehasish
 
+### Feb 2015
+Paper accepted at ISCA 2015 : [Fusion : Design tradeoffs in coherent cache hierarchies for accelerators](http://dl.acm.org/citation.cfm?id=2750421)
+Paper accepted at ICS 2015 : [DASX : Hardware Accelerators for Software Data Structures](http://dl.acm.org/citation.cfm?id=2751231)
+
 #### July 2013
 Started 6 month Co-Op at IBM, T.J Watson Research Centre.  
 Systems Technology and Architecture Department, mentored by [Dr. Vijayalakshmi Srinivasan](http://researcher.watson.ibm.com/researcher/view.php?person=us-viji)
