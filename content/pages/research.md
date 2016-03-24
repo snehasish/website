@@ -12,7 +12,7 @@ There exist a multitude of execution models available today for a developer to t
 
 In this paper, we present Peruse, a tool to characterize the features of loops in an application and to help the programmer understand the amenability of loops for acceleration. We consider a diverse set of features ranging from loop characteristics (e.g., loop exit points) and operation mixes (e.g., control vs data operations) to wider code region characteristics (e.g., idempotency, vectorizability). Peruse is language, architecture, and input independent and uses the intermediate representations of compilers to do the characterization. Using static analyse makes Peruse scalable and enables analysis of large applications of identify and extract interesting loops suitable for acceleration. We show analysis results for unmodified applications from the SPEC CPU benchmark suite, Polybench, and HPC workloads.
 
-For an end-user it is more desirable to get an estimate of the potential speedup due to acceleration. We use the workload characterization results of Peruse as features and develop a machine-learning based model to predict the potential speedup of a loop when off-load to a fixed function hardware accelerator. We use the model to predict the speedup of loops selected y Peruse and achieve and accuracy of 79%.
+For an end-user it is more desirable to get an estimate of the potential speedup due to acceleration. We use the workload characterization results of Peruse as features and develop a machine-learning based model to predict the potential speedup of a loop when off-loaded to a fixed function hardware accelerator. We use the model to predict the speedup of loops selected by Peruse and achieve an accuracy of 79%.
 
 ---
 
