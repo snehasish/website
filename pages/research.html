@@ -31,7 +31,6 @@
                     
                     <li  ><a href="http://www.snehasish.net/index.html">Home</a></li>
 
-                            <li><a href="http://www.snehasish.net/category/misc.html">misc</a></li>
                             <li><a href="http://www.snehasish.net/category/notes.html">Notes</a></li>
 
                             <li><a href="http://www.snehasish.net/pages/contact.html">Contact</a></li>
@@ -49,7 +48,7 @@
 <h4>(2016) Proceedings of the 30th Annual ACM International Conference on Supercomputing</h4>
 <p>There exist a multitude of execution models available today for a developer to target. The choices vary from general purpose processors to fixed-function hardware accelerators with a large number of variations in-between. There is a growing demand to assess the potential benefits of porting or rewriting an application to a target architecture in order to  fully exploit the benefits of performance and/or energy efficiency offered by such targets. However, as a first step of this process, it is necessary to determine whether the application has characteristics suitable for acceleration.</p>
 <p>In this paper, we present Peruse, a tool to characterize the features of loops in an application and to help the programmer understand the amenability of loops for acceleration. We consider a diverse set of features ranging from loop characteristics (e.g., loop exit points) and operation mixes (e.g., control vs data operations) to wider code region characteristics (e.g., idempotency, vectorizability). Peruse is language, architecture, and input independent and uses the intermediate representations of compilers to do the characterization. Using static analyse makes Peruse scalable and enables analysis of large applications of identify and extract interesting loops suitable for acceleration. We show analysis results for unmodified applications from the SPEC CPU benchmark suite, Polybench, and HPC workloads.</p>
-<p>For an end-user it is more desirable to get an estimate of the potential speedup due to acceleration. We use the workload characterization results of Peruse as features and develop a machine-learning based model to predict the potential speedup of a loop when off-load to a fixed function hardware accelerator. We use the model to predict the speedup of loops selected y Peruse and achieve and accuracy of 79%.</p>
+<p>For an end-user it is more desirable to get an estimate of the potential speedup due to acceleration. We use the workload characterization results of Peruse as features and develop a machine-learning based model to predict the potential speedup of a loop when off-loaded to a fixed function hardware accelerator. We use the model to predict the speedup of loops selected by Peruse and achieve an accuracy of 79%.</p>
 <hr />
 <h3>Fusion : Design Tradeoffs in Coherent Cache Hierarchies for Accelerators</h3>
 <h4>Snehasish Kumar, Arrvindh Shriraman, Naveen Vedula</h4>
@@ -57,7 +56,7 @@
 <p>Chip designers have shown increasing interest in integrating specialized fixed-function coprocessors into multicore designs to improve energy efficiency. Recent work in academia and industry has sought to enable more fine-grain offloading at the granularity of functions and loops. The sequential program now needs to migrate across the chip utilizing the appropriate accelerator for each program region. As the execution migrates, it has become increasingly challenging to retain the temporal and spatial locality of the original program as well as manage the data sharing.</p>
 <p>We show that with the increasing energy cost of wires and caches relative to compute operations, it is imperative to optimize data movement to retain the energy benefits of accelerators. We develop FUSION, a lightweight coherent cache hierarchy for accelerators and study the tradeoffs compared to a scratchpad based architecture. We find that coherency, both between the accelerators and with the CPU, can help minimize data movement and save energy. FUSION leverages temporal coherence to optimize data movement within the accelerator tile. The accelerator tile includes small per-accelerator L0 caches to minimize hit energy and a per-tile shared cache to improve localized-sharing between accelerators and minimize data exchanges with the host LLC. We find that overall FUSION improves performance by 4.3× compared to an oracle DMA that pushes data into the scratchpad. In workloads with inter-accelerator sharing we save up to 10x the dynamic energy of the cache hierarchy by minimizing the host-accelerator data ping-ponging.</p>
 <p><a href="http://dl.acm.org/citation.cfm?id=2750421">PDF from ACM DL</a><br />
-<a href="{filename}/docs/ISCA15_Kumar_Fusion.pptx">Conference PPTX</a><br />
+<a href="http://www.snehasish.net/docs/ISCA15_Kumar_Fusion.pptx">Conference PPTX</a><br />
 <a href="https://youtu.be/TIUQ2FlDVPQ">Conference Video</a>  </p>
 <hr />
 <h3>DASX : Hardware Accelerator for Collecting Software Data Structures</h3>
@@ -95,7 +94,7 @@ to efficiently access the data elements. We demonstrate that DAX can
 achieve 4.4× the performance improvement of the multicore system
 by discovering more parallelism from the data structure.</p>
 <p><a href="http://dl.acm.org/citation.cfm?id=2751231">PDF from ACM DL</a><br />
-<a href="{filename}/docs/ICS15_Kumar_DASX.pptx">Conference PPTX</a>  </p>
+<a href="http://www.snehasish.net/docs/ICS15_Kumar_DASX.pptx">Conference PPTX</a>  </p>
 <hr />
 <h3>Protozoa : Adaptive Granularity Cache Coherence</h3>
 <h4>Hongzhou Zhao, Arrvindh Shriraman, Snehasish Kumar, Sandhya Dwarkadas</h4>
