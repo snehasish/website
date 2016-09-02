@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /theme/
 Disallow: /tag/
-Disallow: /72cc2152dad1cc81b27f8631fbef68bd/
