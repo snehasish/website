@@ -34,3 +34,4 @@ THEME="theme-basic"
 ARTICLE_URL = '{category}/{slug}/'
 ARTICLE_SAVE_AS = '{category}/{slug}/index.html'
 SITESUBTITLE=''
+READERS = {'html': None}

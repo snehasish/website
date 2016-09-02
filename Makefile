@@ -86,4 +86,9 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
+special: publish
+	cp -Lr content/72cc2152dad1cc81b27f8631fbef68bd output/72cc2152dad1cc81b27f8631fbef68bd
+	ghp-import $(OUTPUTDIR)
+	git push origin gh-pages
+
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload github
