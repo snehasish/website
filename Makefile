@@ -1,6 +1,7 @@
 PY=python
 PELICAN=pelican
 PELICANOPTS=
+SHELL=/bin/bash
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
@@ -83,6 +84,7 @@ s3_upload: publish
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
 
 github: publish
+	pushd cv && latexmk --pdf && popd && cp cv/cv.pdf output/docs/
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
