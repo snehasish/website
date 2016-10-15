@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% set active_page = "index" %}
+{% block content %}
+
+<hr />
+<div class="row">
+	<div class="col-md-12" >
+		<p class="highlight">I am graduating and seeking full time positions in industry and academia.
+        </p>
+    </div>
+</div>
+<div class="row" id="about">
+    <div class="col-md-12">
+        <h1 class="header">About</h1>
+    </div>
+	<div class="col-md-7">
+		<p>
+        I am a PhD student working with the Architecture Research Group at Simon Fraser University advised by <a target="_blank" href="https://www.cs.sfu.ca/~ashriram/">Arrvindh Shriraman</a>. I am also supervised by <a target="_blank" href="www.cs.sfu.ca/~wsumner/">Nick Sumner</a>, <a target="_blank" href="researcher.ibm.com/view.php?person=us-viji"> Viji Srinivasan</a> and <a target="_blank" href="https://www.ece.ubc.ca/~sasha/">Sasha Fedorova</a>.
+            My research can be broadly described as generalized methods for application specific hardware specialization.
+            I have worked on cache memory systems, coherence protocols, workload characterization and application specific hardware
+            specialization. 
+            <br/>
+            <br/> Publications : <b>HPCA'17, IISWC'16, MICRO'16, ICS'16, ISCA'15, ICS'15, ISCA'13, MICRO'12</b>
+            <br/>
+            <br/> Contact : 
+            <img src="{{ SITEURL }}/theme/images/email.svg" class="img-responsive" width="40%"/>
+            <br/> Curriculum Vitae: 
+            <a target="_blank" href="{{ SITEURL }}/docs/cv.pdf"><img src="{{ SITEURL }}/theme/images/pdf.svg" class="img-responsive" width="10%"/></a>
+        </p>
+	</div>
+	<div class="col-md-5">
+		<img src="{{ SITEURL }}/theme/images/IMG_5378.CR2.jpeg" class="img-responsive" width="100%" />
+	</div>
+</div>
+<hr/>
+<div class="row" id="research">
+    <div class="col-md-12" >
+        <h1 class="header"> Research</h1>
+    </div>
+    <div class="col-md-12" >
+        <p class="research-p">
+    My research is directed at facilitating energy efficient computation via specialization. I have adopted a two-pronged approach. First, a top down approach uses program analysis to determine program regions amenable for specialization using LLVM. Second, a bottom up approach evaluated architectural specialization to enable the efficient offload of accelerated program regions.
+    <br/>
+    <br/>
+    The former uses program analysis to analyse and reconstruct program regions to aid the design and evaluation of specialized accelerators. An analysis of twenty-nine workloads revealed significant merit in analysis at the path granularity for specialization (IISWC'16). Further analysis of instruction dependency chains in frequently executed paths revealed opportunities for specialized macro-instructions (MICRO'16). An insight into the nature of frequently occurring paths led to the development of a new program abstraction for accelerators (HPCA'17). Robust alias analysis at the path granularity also enabled low overhead memory access interfaces for accelerators (submitted ASPLOS'17). I am also leading an ongoing effort to transparently generate application binaries with specialized regions offloaded to a tightly coupled FPGA substrate.
+    <br/> 
+    <br/> 
+    For the latter, I designed and evaluated a hardware accelerator for software data structures. The access of and compute on data structures is offloaded to an array of processing elements which are tightly coupled to the last level cache (ICS'15). I also evaluated a specialized coherence protocol for fixed function accelerators (ISCA'15) which improves performance and reduces energy consumption by mitigating redundant data movement. Finally, I have also worked on variable granularity caching mechanisms (MICRO'12) which adaptively cache useful data based on program behaviour. We also extend this approach to a variable granularity coherence protocol in subsequent work (ISCA'13).
+        </p>
+    </div>
+</div>
+<hr />
+
+<div class="row" id="contact">
+    <div class="col-md-12" >
+        <h1 class="header"> Contact</h1>
+    </div>
+	<div class="col-md-4">
+        <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/snehasish-kumar-0b996b51" data-format="inline" data-related="false"></script>
+	</div>
+	<div class="col-md-4">
+        <p>Contact: <br/>
+        TASC1 8208, <br/> 
+        Simon Fraser University, BC, <br/>
+        Canada V5A1S6 <br/>
+        </p>
+		<img src="{{ SITEURL }}/theme/images/email.svg" class="img-responsive" width="75%"/>
+	</div>
+	<div class="col-md-4">
+        <p>Links: <br/>
+        <a target="_blank" href="https://www.github.com/snehasish">github.com/snehasish</a> <br/>
+        <a target="_blank" href="https://www.github.com/sfu-arch">github.com/sfu-arch</a> <br/>
+        <a target="_blank" href="https://www.semanticscholar.org/author/Snehasish-Kumar/2373761">Semantic Scholar</a> <br/>
+        <a target="_blank" href="https://scholar.google.ca/citations?user=e7heAqoAAAAJ&hl=en">Google Scholar</a> 
+        </p>
+    </div>
+</div>
+<hr />
+<div class="row" id="publications">
+    <div class="col-md-12" >
+        <h1 class="header">Publications <span class="pub-list-link"><a  target="_blank" href="{{ SITEURL }}/docs/list.pdf">&nbsp;(List as PDF)</a></span></h1>
+        
+    </div>
+    {% include "pubs.html" %}
+</div>
+
+
+{% endblock content %}

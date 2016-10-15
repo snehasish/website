@@ -66,6 +66,8 @@ stopserver:
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
+	python bibutils/driver.py --html cv/pubs.bib > $(BASEDIR)/single-page/templates/pubs.html
+	pushd cv && latexmk --pdf && popd && cp cv/*.pdf content/docs/
 	$(PELICAN) $(INPUTDIR) -o $(PUBOUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
@@ -84,7 +86,6 @@ s3_upload: publish
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
 
 github: publish
-	pushd cv && latexmk --pdf && popd && cp cv/cv.pdf output/docs/
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 

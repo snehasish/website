@@ -1,0 +1,55 @@
+html {
+	overflow-y: scroll; 
+}
+
+#site-header{
+	font-family: 'Shadows Into Light Two', cursive;
+}
+
+p {
+    text-align: justify;
+    font-size: 20px;
+}
+
+.highlight {
+    text-align:center;
+    background-color:#9CE6FF;
+    font-weight:bold;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mynav {
+    height : 92px;
+    line-height : 92px;
+}
+
+.research-p {
+    text-align: justify;
+}
+
+.pub-title {
+    font-weight:bold;
+}
+
+.pub-list-link {
+    font-size:50%;
+}
+
+.pub-booktitle {
+    font-style:italic; 
+}
+
+.myname {
+    font-weight:bold;
+}
+
+.contact-p {
+    margin-left:30px;
+}
+
+.header {
+  text-align:left;
+  color: #999;
+}

@@ -1,3 +1,6 @@
 [submodule "cv"]
 	path = cv
 	url = git@github.com:snehasish/cv.git
+[submodule "bibutils"]
+	path = bibutils
+	url = git@github.com:snehasish/bibutils.git
