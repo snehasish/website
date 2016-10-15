@@ -91,6 +91,7 @@ github: publish
 
 special: publish
 	cp -Lr content/72cc2152dad1cc81b27f8631fbef68bd output/72cc2152dad1cc81b27f8631fbef68bd
+	cp -Lr content/c0b9b89275723750628b3723fd176a3b output/c0b9b89275723750628b3723fd176a3b
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
