@@ -4,14 +4,12 @@
         <title>Snehasish</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Removed FEED blocks, will add back ONE later -->
-        <link href="http://www.snehasish.net/theme/css/bootstrap.css" rel="stylesheet" media="screen">
-        <link href="http://www.snehasish.net/theme/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="./theme/css/base.css" />
+        <link rel="stylesheet" href="./theme/css/normalize.css" />
+        <link rel="icon" type="image/png" href="images/favicon.png">
         <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://www.snehasish.net/theme/css/base.css" />
-        <link rel="stylesheet" href="http://www.snehasish.net/theme/css/syntax.css" />
-        <script src="http://www.snehasish.net/theme/js/jquery-2.0.2.min.js"></script>
-        <script src="http://www.snehasish.net/theme/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body id="index" class="home">
@@ -19,63 +17,176 @@
         <div class="container">
 
             <div class="row">            
-                <div class="span12">
-                    <h1 id="site-header"><a href="http://www.snehasish.net">Snehasish</a>
+                <div class="col-md-12">
+                    <h1 id="site-header"><a href=".">Snehasish</a>
                         <small style="font-size:40%">(pronounced snā-hä-SHēSH)</small></h1>
                 </div>
             </div>
-            <hr style="margin:0px 0px 10px 0px;"/>
+            <hr />
             <div class="row">
-                <div class="span12">
-                    <ul class="nav nav-pills pull-right">
-                    
-                    <li  class="active"  ><a href="http://www.snehasish.net/index.html">Home</a></li>
-
-
-                            <li><a href="http://www.snehasish.net/pages/contact.html">Contact</a></li>
-                            <li><a href="http://www.snehasish.net/pages/research.html">Research</a></li>
-                            <li><a href="http://www.snehasish.net/pages/resume.html">Resume</a></li>
-
-                    
-                    
+                <div class="col-md-12">
+                    <ul class="nav nav-pills">
+                      <li role="presentation" class="active"><a href="#about">About</a></li>
+                      <li role="presentation"><a href="#research">Research</a></li>
+                      <li role="presentation"><a href="#contact">Contact</a></li>
+                      <li role="presentation"><a href="#publications">Publications</a></li>
                     </ul>
-                </div>    
-            </div>    
+                </div>
+            </div>
 
-<br />
-<br />
-<br />
-<br />
 
+<hr />
 <div class="row">
-	<div class="span4">
-		<img src="http://www.snehasish.net/theme/img/snehasish_kumar.png" class="img-polaroid" />
+	<div class="col-md-12" >
+		<p class="highlight">I am graduating and seeking full time positions in industry and academia.
+        </p>
+    </div>
+</div>
+<div class="row" id="about">
+    <div class="col-md-12">
+        <h1 class="header">About</h1>
+    </div>
+	<div class="col-md-7">
+		<p>
+        I am a PhD student working with the Architecture Research Group at Simon Fraser University advised by <a target="_blank" href="https://www.cs.sfu.ca/~ashriram/">Arrvindh Shriraman</a>. I am also supervised by <a target="_blank" href="www.cs.sfu.ca/~wsumner/">Nick Sumner</a>, <a target="_blank" href="researcher.ibm.com/view.php?person=us-viji"> Viji Srinivasan</a> and <a target="_blank" href="https://www.ece.ubc.ca/~sasha/">Sasha Fedorova</a>.
+            My research can be broadly described as generalized methods for application specific hardware specialization.
+            I have worked on cache memory systems, coherence protocols, workload characterization and application specific hardware
+            specialization. 
+            <br/>
+            <br/> Publications : <b>HPCA'17, IISWC'16, MICRO'16, ICS'16, ISCA'15, ICS'15, ISCA'13, MICRO'12</b>
+            <br/>
+            <br/> Contact : 
+            <img src="./theme/images/email.svg" class="img-responsive" width="40%"/>
+            <br/> Curriculum Vitae: 
+            <a target="_blank" href="./docs/cv.pdf"><img src="./theme/images/pdf.svg" class="img-responsive" width="10%"/></a>
+        </p>
 	</div>
-	<div class="span8">
-		<p>I am a graduate student at Simon Fraser University (SFU) pursuing a PhD. I work with the Systems Networking and Architecture Research (SYNAR) group at SFU under the supervision of Dr. Arrvindh Shriraman. I joined SFU in Spring 2011 and completed my MSc in Spring 2013. My research interests include Multicore Architectures, Cache Memory Systems, Heterogeneous Architectures and GPGPU systems. I hail from Calcutta, India and I am an alumnus of St. James's School. I received my undergraduate degree from Biju Patnaik University of Technology in 2010. </p>
+	<div class="col-md-5">
+		<img src="./theme/images/IMG_5378.CR2.jpeg" class="img-responsive" width="100%" />
 	</div>
 </div>
+<hr/>
+<div class="row" id="research">
+    <div class="col-md-12" >
+        <h1 class="header"> Research</h1>
+    </div>
+    <div class="col-md-12" >
+        <p class="research-p">
+    My research is directed at facilitating energy efficient computation via specialization. I have adopted a two-pronged approach. First, a top down approach uses program analysis to determine program regions amenable for specialization using LLVM. Second, a bottom up approach evaluated architectural specialization to enable the efficient offload of accelerated program regions.
+    <br/>
+    <br/>
+    The former uses program analysis to analyse and reconstruct program regions to aid the design and evaluation of specialized accelerators. An analysis of twenty-nine workloads revealed significant merit in analysis at the path granularity for specialization (IISWC'16). Further analysis of instruction dependency chains in frequently executed paths revealed opportunities for specialized macro-instructions (MICRO'16). An insight into the nature of frequently occurring paths led to the development of a new program abstraction for accelerators (HPCA'17). Robust alias analysis at the path granularity also enabled low overhead memory access interfaces for accelerators (submitted ASPLOS'17). I am also leading an ongoing effort to transparently generate application binaries with specialized regions offloaded to a tightly coupled FPGA substrate.
+    <br/> 
+    <br/> 
+    For the latter, I designed and evaluated a hardware accelerator for software data structures. The access of and compute on data structures is offloaded to an array of processing elements which are tightly coupled to the last level cache (ICS'15). I also evaluated a specialized coherence protocol for fixed function accelerators (ISCA'15) which improves performance and reduces energy consumption by mitigating redundant data movement. Finally, I have also worked on variable granularity caching mechanisms (MICRO'12) which adaptively cache useful data based on program behaviour. We also extend this approach to a variable granularity coherence protocol in subsequent work (ISCA'13).
+        </p>
+    </div>
+</div>
+<hr />
+
+<div class="row" id="contact">
+    <div class="col-md-12" >
+        <h1 class="header"> Contact</h1>
+    </div>
+	<div class="col-md-4">
+        <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+<script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/snehasish-kumar-0b996b51" data-format="inline" data-related="false"></script>
+	</div>
+	<div class="col-md-4">
+        <p>Contact: <br/>
+        TASC1 8208, <br/> 
+        Simon Fraser University, BC, <br/>
+        Canada V5A1S6 <br/>
+        </p>
+		<img src="./theme/images/email.svg" class="img-responsive" width="75%"/>
+	</div>
+	<div class="col-md-4">
+        <p>Links: <br/>
+        <a target="_blank" href="https://www.github.com/snehasish">github.com/snehasish</a> <br/>
+        <a target="_blank" href="https://www.github.com/sfu-arch">github.com/sfu-arch</a> <br/>
+        <a target="_blank" href="https://www.semanticscholar.org/author/Snehasish-Kumar/2373761">Semantic Scholar</a> <br/>
+        <a target="_blank" href="https://scholar.google.ca/citations?user=e7heAqoAAAAJ&hl=en">Google Scholar</a> 
+        </p>
+    </div>
+</div>
+<hr />
+<div class="row" id="publications">
+    <div class="col-md-12" >
+        <h1 class="header">Publications <span class="pub-list-link"><a  target="_blank" href="./docs/list.pdf">&nbsp;(List as PDF)</a></span></h1>
+        
+    </div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> Needle : Leveraging Program Analysis to Extract Accelerators from Whole Programs </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span>, Nick Sumner, Vijayalakshmi Srinivasan, Steve Margerm, Arrvindh Shriraman </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 23rd ACM International Conference on High Performance Computer Architecture </span> <br/>
+<span class="pub-year"> 2017 </span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> Peruse and Profit: Estimating the Accelerability of Loops </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span>, Vijayalakshmi Srinivasan, Amirali Sharifian, Nick Sumner, Arrvindh Shriraman </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 2016 International Conference on Supercomputing </span> <br/>
+<span class="pub-year"> 2016 </span>
+<span class="pub-url"><a  target="_blank" href=" http://doi.acm.org/10.1145/2925426.2926269 ">[url]</a></span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> SPEC-AX : Extracting Accelerator Benchmarks from Microprocessor Benchmarks </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span>, Nick Sumner, Arrvindh Shriraman </span> <br/>
+<span class="pub-booktitle"> Workload Characterization (IISWC), 2016 IEEE International Symposium on </span> <br/>
+<span class="pub-year"> 2016 </span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> ChainSaw : Creating Von-Neumann Accelerators with Fused Instruction Chains </span> <br/>
+<span class="pub-author"> Amirali Sharifian, <span class="myname">Snehasish Kumar</span>, Apala Guha, Arrvindh Shriraman </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 49th Annual IEEE/ACM International Symposium on Microarchitecture </span> <br/>
+<span class="pub-year"> 2016 </span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> Fusion: Design Tradeoffs in Coherent Cache Hierarchies for Accelerators </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span>, Arrvindh Shriraman, Naveen Vedula </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 42Nd Annual International Symposium on Computer Architecture </span> <br/>
+<span class="pub-year"> 2015 </span>
+<span class="pub-url"><a  target="_blank" href=" http://doi.acm.org/10.1145/2749469.2750421 ">[url]</a></span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> DASX: Hardware Accelerator for Software Data Structures </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span>, Naveen Vedula, Arrvindh Shriraman, Vijayalakshmi Srinivasan </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 29th ACM on International Conference on Supercomputing </span> <br/>
+<span class="pub-year"> 2015 </span>
+<span class="pub-url"><a  target="_blank" href=" http://doi.acm.org/10.1145/2751205.2751231 ">[url]</a></span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> Protozoa : Adaptive Granularity Cache Coherence </span> <br/>
+<span class="pub-author"> Hongzhou Zhao, Arrvindh Shriraman, <span class="myname">Snehasish Kumar</span>, Sandhya Dwarkadas </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 40th Annual International Symposium on Computer Architecture </span> <br/>
+<span class="pub-year"> 2013 </span>
+<span class="pub-url"><a  target="_blank" href=" http://doi.acm.org/10.1145/2485922.2485969 ">[url]</a></span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> Architectural Support for a Variable Granularity Cache Memory System </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span> </span> <br/>
+<span class="pub-year"> 2013 </span>
+<span class="pub-url"><a  target="_blank" href=" http://summit.sfu.ca/item/12771 ">[url]</a></span>
+</p></div>
+<div class="col-md-12"><p class="pub-p">
+<span class="pub-title"> Amoeba-Cache : Adaptive Blocks for Eliminating Waste in the Memory Hierarchy </span> <br/>
+<span class="pub-author"> <span class="myname">Snehasish Kumar</span>, Hongzhou Zhao, Arrvindh Shriraman, Eric Matthews, Sandhya Dwarkadas, Lesley Shannon </span> <br/>
+<span class="pub-booktitle"> Proceedings of the 45th Annual IEEE/ACM International Symposium on Microarchitecture </span> <br/>
+<span class="pub-year"> 2012 </span>
+<span class="pub-url"><a  target="_blank" href=" http://dx.doi.org/10.1109/MICRO.2012.42 ">[url]</a></span>
+</p></div></div>
 
 
-            <hr style="margin:30px 0px 0px 0px;"/>
+
+            <hr />
             <div class="row">
-                <div class="span12">
-                    <footer class="text-center"> Generated by <a href="http://blog.getpelican.com/">pelican</a>. Uses Google <a href="http://www.google.com/fonts/">webfonts</a> and Twitter <a href="http://twitter.github.io/bootstrap/">bootstrap</a>.
-                    <br />Copyright &copy; Snehasish Kumar, 2015
+                <div class="col-md-12">
+                    <footer class="text-center"> Generated by <a href="http://blog.getpelican.com/">pelican</a>. Uses Google <a href="http://www.google.com/fonts/">webfonts</a> and <a href="http://getbootstrap.com/">Bootstrap</a>.
+                    <br />&copy; Snehasish Kumar, 2016
                     </footer>
                 </div> 
             </div>
 
         </div>
-<script type="text/javascript">
-    var disqus_shortname = 'snehasish';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-42112602-1']);
