@@ -42,7 +42,8 @@ p {
 }
 
 .myname {
-    font-weight:bold;
+    text-decoration:underline;
+    
 }
 
 .contact-p {
