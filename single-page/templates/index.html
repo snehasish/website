@@ -5,7 +5,7 @@
 <hr />
 <div class="row">
 	<div class="col-md-12" >
-		<p class="highlight">I am graduating and seeking full time positions in industry and academia.
+		<p class="highlight">I have graduated and currently seeking full time positions in industry and academia.
         </p>
     </div>
 </div>
@@ -13,9 +13,9 @@
     <div class="col-md-12">
         <h1 class="header">About</h1>
     </div>
-	<div class="col-md-7">
+	<div class="col-md-8">
 		<p>
-        I am a PhD student working with the Architecture Research Group at Simon Fraser University advised by <a target="_blank" href="https://www.cs.sfu.ca/~ashriram/">Arrvindh Shriraman</a>. I am also supervised by <a target="_blank" href="www.cs.sfu.ca/~wsumner/">Nick Sumner</a>, <a target="_blank" href="researcher.ibm.com/view.php?person=us-viji"> Viji Srinivasan</a> and <a target="_blank" href="https://www.ece.ubc.ca/~sasha/">Sasha Fedorova</a>.
+        As a PhD student I worked with the Architecture Research Group at <a target="_blank" href="https://www.sfu.ca/computing.html">Simon Fraser University</a> advised by <a target="_blank" href="https://www.cs.sfu.ca/~ashriram/">Arrvindh Shriraman</a>. I was also supervised by <a target="_blank" href="www.cs.sfu.ca/~wsumner/">Nick Sumner</a>, <a target="_blank" href="researcher.ibm.com/view.php?person=us-viji"> Viji Srinivasan</a> and <a target="_blank" href="https://www.ece.ubc.ca/~sasha/">Sasha Fedorova</a>.
             My research can be broadly described as generalized methods for application specific hardware specialization.
             I have worked on cache memory systems, coherence protocols, workload characterization and application specific hardware
             specialization. 
@@ -24,14 +24,21 @@
             <br/>
             <br/> Contact : 
             <img src="{{ SITEURL }}/theme/images/email.svg" class="img-responsive" width="40%"/>
-            <br/> Curriculum Vitae: 
-            <a target="_blank" href="{{ SITEURL }}/docs/cv.pdf"><img src="{{ SITEURL }}/theme/images/pdf.svg" class="img-responsive" width="10%"/></a>
+            <br/>
+            Resume: 
+            <a target="_blank" href="{{ SITEURL }}/docs/resume.pdf"><img src="{{ SITEURL }}/theme/images/pdf.svg" class="img-responsive" width="10%"/></a>
         </p>
 	</div>
-	<div class="col-md-5">
-		<img src="{{ SITEURL }}/theme/images/IMG_5378.CR2.jpeg" class="img-responsive" width="100%" />
+	<div class="col-md-4">
+		<img src="{{ SITEURL }}/theme/images/snehasish_kumar.jpg" class="img-responsive pull-right" width="85%" />
 	</div>
 </div>
+<!--<div class="row" id="cv">-->
+    <!--<div class="col-md-2">-->
+            <!--Resume (1 pg): -->
+            <!--<a target="_blank" href="{{ SITEURL }}/docs/resume.pdf"><img src="{{ SITEURL }}/theme/images/pdf.svg" class="img-responsive" width="30%"/></a>-->
+    <!--</div>-->
+<!--</div>-->
 <hr/>
 <div class="row" id="research">
     <div class="col-md-12" >
@@ -39,13 +46,50 @@
     </div>
     <div class="col-md-12" >
         <p class="research-p">
-    My research is directed at facilitating energy efficient computation via specialization. I have adopted a two-pronged approach. First, a top down approach uses program analysis to determine program regions amenable for specialization using LLVM. Second, a bottom up approach evaluated architectural specialization to enable the efficient offload of accelerated program regions.
-    <br/>
-    <br/>
-    The former uses program analysis to analyse and reconstruct program regions to aid the design and evaluation of specialized accelerators. An analysis of twenty-nine workloads revealed significant merit in analysis at the path granularity for specialization (IISWC'16). Further analysis of instruction dependency chains in frequently executed paths revealed opportunities for specialized macro-instructions (MICRO'16). An insight into the nature of frequently occurring paths led to the development of a new program abstraction for accelerators (HPCA'17). Robust alias analysis at the path granularity also enabled low overhead memory access interfaces for accelerators. I am also leading an ongoing effort to transparently generate application binaries with specialized regions offloaded to a tightly coupled FPGA substrate (Altera Cyclone 5 SOC).
-    <br/> 
-    <br/> 
-    For the latter, I designed and evaluated a hardware accelerator for software data structures. The access of and compute on data structures is offloaded to an array of processing elements which are tightly coupled to the last level cache (ICS'15). I also evaluated a specialized coherence protocol for fixed function accelerators (ISCA'15) which improves performance and reduces energy consumption by mitigating redundant data movement. Finally, I have also worked on variable granularity caching mechanisms (MICRO'12) which adaptively cache useful data based on program behaviour. We also extend this approach to a variable granularity coherence protocol in subsequent work (ISCA'13).
+        The need for computational power has increased with emerging workloads such as 
+        machine learning driving the information economy. 
+        Yet data center and embedded computing alike
+        desire reduced power consumption. 
+        With the breakdown of semiconductor technology scaling, we no longer attain improved
+        performance and reduced energy consumption by using smaller transistors. 
+        The semiconductor industry has  
+        resorted to hardware specialization as a means to provide the 
+        performance and energy benefits consumers have experienced since the
+        invention of the microprocessor. However, specialized hardware units
+        introduce new challenges, namely -- what to specialize,
+        how to specialize and how to integrate specialized units. Current approaches require 
+        manual effort to analyse, restructure and rewrite workloads to take advantage 
+        of specialized hardware accelerators. 
+        <br/>
+        <br/>
+        My research has focused on automated compiler techniques with a goal
+        of specialization. 
+        It is the first to directly address the problems of 
+        what to specialize and how to specialize program 
+        regions in large, irregular workloads. 
+        I recognized the utility of adapting program analysis 
+        techniques to address the problem.
+        My work at IISWC'16 demonstrates that analyses at coarser granularities 
+        smears characteristics critical to hardware specialization. 
+        Using a methodology adapted from program analysis, 
+        I have synthesized an accelerator workload suite to assist researchers. 
+        I have also developed program abstractions to ease the mapping of irregular
+        programs onto specialized hardware accelerators (HPCA'17).
+        The tools I have built are available as free and
+        open source software. Built upon a modern compiler framework, 
+        they allow researchers to easily reproduce and extend the work that I have done.
+        <br/>
+        <br/>
+        In addition to this line of work, I have also conducted research on mitigating
+        energy consumption due to extraneous data movement.
+        In our work presented at ISCA'15, we showed the utility of time-stamp based coherence 
+        protocols to reduce the overhead of data movement in accelerator rich architectures. 
+        It allows for close integration of multiple specialized units 
+        while easing the programming burden of explicit data transfers. 
+        Furthermore, I have designed and evaluated adaptive granularity caching mechanisms to
+        eliminate waste (MICRO'12). This technique also provides a convenient substrate 
+        for subsequent optimizations such as cache compression. 
+
         </p>
     </div>
 </div>
